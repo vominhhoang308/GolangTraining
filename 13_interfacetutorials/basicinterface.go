@@ -11,7 +11,7 @@ type Square struct {
 }
 
 // We are creating another Circle type struct
-type Circle struct{
+type Circle struct {
 	radius float64
 }
 
@@ -36,7 +36,7 @@ func (s Square) area() float64 {
 }
 
 // We are implementing Shape interface to a Circle struct by implementing method area()
-func (c Circle) area() float64{
+func (c Circle) area() float64 {
 	return math.Pi * c.radius * c.radius
 }
 
