@@ -1,0 +1,12 @@
+CONCURRENCY is the composition of independently executing process, while PARALLELISM is the simultaneosly execution
+of computations. CONCURRENCY is about DEALING WITH LOTS OF THINGS AT ONCE
+PARALLELISM is about DOING WITH LOTS OF THINGS AT ONCE.
+
+CONCURRENCY: doing many things, but only one at a time "multitasking"
+
+vi du dien hinh cua CONCURRENCY: mot nguoi chi co the noi chuyen, XONG ROI uong 1 xiu nuoc, XONG ROI lai noi chuyen,
+XONG ROI lai uong nuoc, v.v
+
+PARALLELISM: doing many things at a time:
+
+vi du dien hinh: mot nguoi VUA noi chuyen VUA uong nuoc => bi SAC
