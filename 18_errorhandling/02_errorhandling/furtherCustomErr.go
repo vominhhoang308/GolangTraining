@@ -9,6 +9,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"errors"
 )
 
 type NorgateMathError struct {
@@ -22,6 +23,7 @@ func (n *NorgateMathError) Error() string {
 }
 
 func main() {
+	fmt.Println(&NorgateMathError{"abc", "lon", errors.New("HAHA TEST RUN ERROR() function")}) // WHY WE JUST CALL THE ADDRESS OF NORGATEMATHERROR object, it runs the Error() function..
 	_, err := SqrtCustom(-10.23)
 	if err != nil {
 		log.Println(err)
@@ -31,8 +33,7 @@ func main() {
 func SqrtCustom(f float64) (float64, error) {
 	if f < 0 {
 		nme := fmt.Errorf("norgate math redux: square root of negative number: %v", f)
-		var1 := NorgateMathError{"50.2289 N", "99.4656 W", nme}
-		return 0, &var1
+		return 0, &NorgateMathError{"50.2289 N", "99.4656 W", nme}
 	}
 	// implementation
 	return 42, nil
