@@ -7,7 +7,7 @@ import (
 
 func main() {
 	c := make(chan int) // We create a channel using MAKE, because it is a reference type, like map and slice
-				// this is an UNBUFFERED CHANNEL, which means that there would be no limitation in terms of space
+	// this is an UNBUFFERED CHANNEL, which means that there would be no limitation in terms of space
 
 	// explanation of this code below: we have two thread running concurrency, we call it go routine running concurrency
 	// we already created a channel
@@ -19,15 +19,15 @@ func main() {
 	// loop will wait for the value to run, and the channel print whenever the new value is passed in
 	go func() {
 		for i := 0; i < 10; i++ {
-			c <- i
+			c <- i // So the code STOP RIGHT HERE UNTIL THERE IS SOMETHING THAT TAKES THE VALUE OFF THE CHANNEL
 		}
 	}()
 
 	go func() {
 		for {
-			fmt.Println(<-c)
+			fmt.Println(<-c) // THIS IS println then it waits for the upper code put something inside the channel
 		}
 	}()
 
-	time.Sleep(time.Second);
+	time.Sleep(time.Second)
 }
